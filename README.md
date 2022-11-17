@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+demo_engine gem: https://github.com/hemangini-g-simformsolutions/demoEngine.git
 
-Things you may want to cover:
+**Steps followed to use gem demo_engine with this application**
 
-* Ruby version
+gem 'demo_engine', git:'https://github.com/hemangini-g-simformsolutions/demoEngine.git', branch:'main'
 
-* System dependencies
+bundle install
 
-* Configuration
+bin/rails demo_engine:install:migrations
 
-* Database creation
+bin/rails db:migrate
 
-* Database initialization
+add this line in app/assets/config/manifest.js 
 
-* How to run the test suite
+//= link demo_engine/application.css
 
-* Services (job queues, cache servers, search engines, etc.)
+add this line in routes.rb file
 
-* Deployment instructions
+mount DemoEngine::Engine => "/demo_engine"
 
-* ...
+rails s
+
+Go to http://localhost:3000/demo_engine
